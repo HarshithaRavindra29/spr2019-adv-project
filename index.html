@@ -37,17 +37,58 @@
             data: {
                 url: './output.json'
             },
-            mark: 'line',
-            encoding: {
-                x: {
-                    field: 'DATE',
-                    type: 'temporal'
-                },
-                y: {
-                    field: 'CHINATOWN',
-                    type: 'quantitative'
-                }
-            }
+            "vconcat": [{
+                "hconcat": [{
+                    mark: 'line',
+                    encoding: {
+                        x: {
+                            field: 'DATE',
+                            type: 'temporal'
+                        },
+                        y: {
+                            field: 'CHINATOWN',
+                            type: 'quantitative'
+                        }
+                    }
+                }, {
+                    mark: 'line',
+                    encoding: {
+                        x: {
+                            field: 'DATE',
+                            type: 'temporal'
+                        },
+                        y: {
+                            field: 'ALBANY PARK',
+                            type: 'quantitative'
+                        }
+                    }
+                }],
+                "hconcat": [{
+                    mark: 'line',
+                    encoding: {
+                        x: {
+                            field: 'DATE',
+                            type: 'temporal'
+                        },
+                        y: {
+                            field: 'NORTH PULASKI',
+                            type: 'quantitative'
+                        }
+                    }
+                }, {
+                    mark: 'line',
+                    encoding: {
+                        x: {
+                            field: 'DATE',
+                            type: 'temporal'
+                        },
+                        y: {
+                            field: 'WEST BELMONT',
+                            type: 'quantitative'
+                        }
+                    }
+                }],
+            }]
         };
         vegaEmbed('#vis', yourVlSpec);
     </script>
